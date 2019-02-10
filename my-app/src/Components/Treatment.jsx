@@ -39,10 +39,9 @@ class Dashboard extends Component {
             if (data.status === 200) {
                 this.setState({alert: 1});
                 console.log(data);
-                window.location.reload();
+                this.props.history.push('/dashboard');
             } else if (data.status === 400) {
                 this.setState({alert: 2});
-                window.location.reload();
             }
         }).catch((err) => {
             console.log(err);
@@ -57,10 +56,9 @@ class Dashboard extends Component {
             if (data.status === 200) {
                 this.setState({alert: 3});
                 console.log(data);
-                window.location.reload();
+                this.props.history.push('/dashboard');
             } else if (data.status === 400) {
                 this.setState({alert: 2});
-                window.location.reload();
             }
         }).catch((err) => {
             console.log(err);
@@ -145,7 +143,7 @@ class Dashboard extends Component {
                                         <button style={{padding: 10, margin: 10}}
                                                 className="btn btn-danger"
                                                 onClick={() => this.commandCancelled(command._id)}
-                                        >Refus
+                                        >Refuser
                                         </button>
                                     </div>
 

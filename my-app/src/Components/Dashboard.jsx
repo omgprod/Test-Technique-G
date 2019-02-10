@@ -17,7 +17,7 @@ class Dashboard extends Component {
 
     /*** FetchData onLoad ***/
     async getData() {
-        axios.get(`http://localhost:8000/fetch`)
+        await axios.get(`http://localhost:8000/fetch`)
             .then(data => {
                 if (data.status === 200) {
                     this.setState({Data: data.data});
@@ -26,11 +26,10 @@ class Dashboard extends Component {
                 }
             }).catch((err) => {
             console.log(err);
-        })
+        });
     };
 
     handleClick(id) {
-        console.log('this is:' + id);
         localStorage.setItem('id', id);
         console.log(localStorage.getItem('id'));
         this.props.history.push('/treat');
@@ -57,8 +56,8 @@ class Dashboard extends Component {
                                     <th scope="col">Telephone</th>
                                     <th scope="col">Date de livraison</th>
                                     <th scope="col">Horaire de livraison</th>
+                                    <th scope="col">Situation</th>
                                     <th scope="col">Traitement</th>
-                                    <th scope="col">Traiter</th>
                                 </tr>
                                 </thead>
 
