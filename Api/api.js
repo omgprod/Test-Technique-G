@@ -146,13 +146,15 @@ app.post('/treat/1', (req, res) => {
                         },
                         debug: true
                     });
-                    transporter.on('log', console.log);
                     let mailOptions = {
                         from: '"Customer Service" <xx@gmail.com>',
                         to: command.email,
                         subject: command._id,
                         text: "Refus",
-                        html: "<b>Votre Commande a était refusé. contacter le service pour plus d'information</b>"
+                        html: '<p>Chère ' + command.name + ',' + command.prenom +'</p>' +
+                            '<p>Votre Commande N° <b>' + command._id + '</b> a malheureusement était réfusé par nos service.</p>' +
+                            '<p>Veuillez ré-itérer votre commande avec des horaires plus flexibles, ou un adresse valide</p>'+
+                            '<p>L équipe feras son maximum pour convenir a vos besoins </p>'
                     };
 
                     transporter.sendMail(mailOptions, (error, info) => {
@@ -160,9 +162,10 @@ app.post('/treat/1', (req, res) => {
                             return console.log(error);
                         }
                         console.log('Message %s sent: %s', info.messageId, info.response);
+                        transporter.on('log', console.log);
                     });
                     /*** ***/
-                    return res.status(200).send({
+                    return res.render('index').status(200).send({
                         Success: true,
                         message: "Commande refusé",
                         validCommand
@@ -209,24 +212,23 @@ app.post('/treat/0', (req, res) => {
                         to: command.email,
                         subject: command._id,
                         text: "validé",
-                        html: '<p>Chère ' + command.name + '</p>' +
-                            '<b>Votre Commande N° ' + command._id + ' a bien était validé.</b>' +
-                            '<p>L équipe fait son maximum pour vous livrer le </p>' + command.date
+                        html: '<p>Chère ' + command.name + ',' + command.prenom +'</p>' +
+                            '<p>Votre Commande N° <b>' + command._id + '</b> a bien était validé.</p>' +
+                            '<p>L équipe fait son maximum pour vous livrer le ' + command.date +'</p>'
                     };
 
                     transporter.sendMail(mailOptions, (error, info) => {
                         if (error) {
                             return console.log(error);
-                        } else {
-                            return res.status(200).send({
-                                Success: true,
-                                message: "Commande confirmé",
-                                validCommand
-                            })
                         }
                         console.log('Message %s sent: %s', info.messageId, info.response);
                         transporter.on('log', console.log);
                     });
+                    return res.status(200).send({
+                        Success: true,
+                        message: "Commande confirmé",
+                        validCommand
+                    })
                 }).catch(e => {
                 return res.status(400).send({
                     Success: false,

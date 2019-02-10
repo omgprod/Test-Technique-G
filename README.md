@@ -10,14 +10,13 @@ Dashboard + Formulaire [React - NodeJS]
 # - MongoDB : 
 - Nom base de données : Technique
 
-#--------------------------------------
 
 # Installation Api : 
 - cd /Api
 - npm install
 - npm start 
 
-#Installation React :
+# Installation React :
 - cd /my-app 
 - npm install && yarn install
 - npm start

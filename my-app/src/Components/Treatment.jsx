@@ -13,10 +13,6 @@ class Dashboard extends Component {
     }
 
     componentDidMount() {
-        setTimeout(function () { //Start the timer
-            this.setState({alert: 0}); //After 1 second, set render to true
-        }.bind(this), 1000)
-
         this.getData();
     }
 
@@ -42,6 +38,7 @@ class Dashboard extends Component {
         }).then(data => {
             if (data.status === 200) {
                 this.setState({alert: 1});
+                console.log(data);
                 window.location.reload();
             } else if (data.status === 400) {
                 this.setState({alert: 2});
@@ -59,6 +56,7 @@ class Dashboard extends Component {
         }).then(data => {
             if (data.status === 200) {
                 this.setState({alert: 3});
+                console.log(data);
                 window.location.reload();
             } else if (data.status === 400) {
                 this.setState({alert: 2});
