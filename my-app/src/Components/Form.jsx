@@ -80,6 +80,7 @@ class Form extends Component {
         ).then(data => {
             if (data.status === 200) {
                 alert('Command sent');
+                window.location.reload();
             } else {
                 alert('an error occured');
             }
@@ -107,6 +108,8 @@ class Form extends Component {
                                         <input id="firstname" name="firstname" type="text"
                                                onChange={this.handleChangePrenom}
                                                value={this.state.prenom} required
+                                               minLength={3}
+                                               maxLength={20}
                                         />
                                     </div>
 
@@ -115,6 +118,8 @@ class Form extends Component {
                                         <input id="name" name="name" type="text"
                                                onChange={this.handleChangeName}
                                                value={this.state.value} required
+                                               minLength={3}
+                                               maxLength={20}
                                         />
                                     </div>
 
@@ -131,6 +136,7 @@ class Form extends Component {
                                         <input id="email" name="email" type="text"
                                                onChange={this.handleChangeEmail}
                                                value={this.state.email} required
+
                                         />
                                     </div>
 
@@ -156,6 +162,9 @@ class Form extends Component {
                                         <input id="heure" name="heure" type="number" placeholder="18 heures"
                                                onChange={this.handleChangeHoraire}
                                                value={this.state.horaire}
+                                               aria-valuemax={2}
+                                               min="1" max="24"
+                                               required
                                         />
                                     </div>
 
@@ -165,12 +174,8 @@ class Form extends Component {
                                     <span>Champs obligatoires marqué par *</span>
                                 </div>
 
-
-
                             </div>
                         </div>
-
-
                     </form>
                 </div>
             </React.Fragment>

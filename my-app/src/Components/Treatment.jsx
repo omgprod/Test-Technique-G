@@ -23,7 +23,7 @@ class Dashboard extends Component {
                 if (data.status === 200) {
                     this.setState({Order: data.data})
                 } else if (data.status === 400) {
-
+                    alert('An error occured.')
                 }
             }).catch((err) => {
             console.log(err);
@@ -36,9 +36,11 @@ class Dashboard extends Component {
             id: id
         }).then(data => {
             if (data.status === 200) {
-                console.log(data)
+                console.log(data);
+                window.location.reload()
             } else if (data.status === 400) {
-                console.log(data)
+                console.log(data);
+                alert('An error occured.')
             }
         }).catch((err) => {
             console.log(err);
@@ -51,9 +53,11 @@ class Dashboard extends Component {
             id: id
         }).then(data => {
             if (data.status === 200) {
-                console.log(data)
+                console.log(data);
+                window.location.reload()
             } else if (data.status === 400) {
-                console.log(data)
+                console.log(data);
+                alert('An error occured.');
             }
         }).catch((err) => {
             console.log(err);
@@ -77,17 +81,16 @@ class Dashboard extends Component {
                                     <h3>Statut de la commande : {command.demande}</h3>
                                     <hr/>
                                     <div className="form-group">
-                                        <h2>Prenom: {command.prenom}</h2>
-                                        <h2>Nom: {command.name}</h2>
-                                        <h2>Email: {command.email}</h2>
-                                        <h2>Tel: {command.telephone}</h2>
+                                        <p>Prenom: {command.prenom}</p>
+                                        <p>Nom: {command.name}</p>
+                                        <p>Email: {command.email}</p>
+                                        <p>Tel: {command.telephone}</p>
                                     </div>
                                     <hr/>
-                                    <h2>Adresse de livraison: {command.adresse}</h2>
+                                    <p>Adresse de livraison: {command.adresse}</p>
                                     <hr/>
-                                    <h2></h2>
-                                    <h2>a livrer le {command.date}</h2>
-                                    <h2>à {command.horaire} heures</h2>
+                                    <p>a livrer le {command.date}</p>
+                                    <p>à {command.horaire} heures</p>
 
                                     <div className="form-group" style={{padding: 10, margin: 10}}>
                                         <button style={{padding: 10, margin: 10}}

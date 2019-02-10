@@ -15,7 +15,7 @@ export default class Header extends Component {
                 <header>
                     <div className="container">
                         <NavLink to="/"><img className="" src="http://localhost:3000/img/logo.png"
-                                             alt="wacommerce"/></NavLink>
+                                             alt="Test-Technique"/></NavLink>
                         <div className="d-flex">
                             <div className="auth-header">
                                 <div>

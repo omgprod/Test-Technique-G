@@ -93,19 +93,26 @@ app.post('/new', (req, res) => {
 /**** GET ALL COMMANDS ****/
 app.get('/fetch', (req, res) => {
     Commands.find({}, function (err, commands) {
-        res.status(200).send(
-            commands
-        );
+        if (err) {
+            throw err
+        } else {
+            return res.status(200).send(
+                commands
+            );
+        }
     });
 });
 
 /**** GET ONE COMMAND ****/
 app.get('/command/:id', (req, res) => {
-    console.log(req.params.id)
     Commands.findById(req.params.id, function (err, command) {
-        res.status(200).send(
-            command
-        );
+        if (err) {
+            throw err
+        } else {
+            res.status(200).send(
+                command
+            );
+        }
     });
 });
 
@@ -235,4 +242,4 @@ app.listen(port, ip, () => {
 
 /**** Copyright ****/
 console.log('..:: OMG-PROD 2019 ::..');
-console.log('..:: NODE CRUD API ::..');
+console.log('..:: NODE--EXPRESS ::..');
