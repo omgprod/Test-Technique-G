@@ -1,19 +1,25 @@
 # Test-Technique-G
-Dashboard + Formulaire [React - NodeJS]
+Dashboard + Formulaire [React - NodeJS] 
 
-Technos utilisés : 
+# - BACK : 
+- NodeJS, Express, MongoDB, Mongoose, NodeMailer 
 
-BACK : NodeJS, Express, MongoDB, Mongoose, NodeMailer 
-FRONT : ReactJS, Axios, Bootstrap
+# - FRONT : 
+- ReactJS, Axios, Bootstrap
 
-Installation Api : 
- 
+# - MongoDB : 
+- Nom base de données : Technique
+
+#--------------------------------------
+
+# Installation Api : 
 - cd /Api
 - npm install
 - npm start 
 
-installation React :
- 
+#Installation React :
 - cd /my-app 
-- npm install
+- npm install && yarn install
 - npm start
+
+
