@@ -16,6 +16,12 @@ var CommandSchema = new Schema({
     adresse: {
         type: String,
     },
+    postal: {
+        type: Number,
+    },
+    pays: {
+        type: String,
+    },
     telephone: {
         type: String,
     },

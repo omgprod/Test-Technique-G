@@ -12,6 +12,9 @@ class Form extends Component {
             email: "",
             date: "",
             horaire: "",
+            code: 0,
+            pays: "",
+            alert: 0,
         };
         this.handleChangePrenom = this.handleChangePrenom.bind(this);
         this.handleChangeName = this.handleChangeName.bind(this);
@@ -20,7 +23,12 @@ class Form extends Component {
         this.handleChangeEmail = this.handleChangeEmail.bind(this);
         this.handleChangeDate = this.handleChangeDate.bind(this);
         this.handleChangeHoraire = this.handleChangeHoraire.bind(this);
+        this.handleChangeCP = this.handleChangeCP.bind(this);
+        this.handleChangePays = this.handleChangePays.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    componentDidMount() {
+        this.setState({alert: 0});
     }
 
     handleChangePrenom(event) {
@@ -65,6 +73,18 @@ class Form extends Component {
         });
     }
 
+    handleChangeCP(event) {
+        this.setState({
+            code: event.target.value,
+        });
+    }
+
+    handleChangePays(event) {
+        this.setState({
+            pays: event.target.value,
+        });
+    }
+
     handleSubmit(event) {
         var command = {
             prenom: this.state.prenom,
@@ -74,15 +94,22 @@ class Form extends Component {
             telephone: this.state.telephone,
             date: this.state.date,
             horaire: this.state.horaire,
+            postal: this.state.code,
+            pays: this.state.pays,
         }
 
         axios.post("http://localhost:8000/new", command
         ).then(data => {
             if (data.status === 200) {
-                alert('Command sent');
-                window.location.reload();
+                this.setState({alert: 1});
+                setTimeout(function() {
+                    window.location.reload();
+                }, 3000);
             } else {
-                alert('an error occured');
+                this.setState({alert: 2});
+                setTimeout(function() {
+                    alert('an error occured');
+                }, 3000);
             }
         }).catch(error => {
             alert(error);
@@ -94,84 +121,125 @@ class Form extends Component {
         return (
             <React.Fragment>
                 <div className="account-first-section">
-                    <form className="account-info" style={{backgroundColor: '#68a3c0'}} onSubmit={this.handleSubmit}>
+                    <form className="account-info" onSubmit={this.handleSubmit}>
                         <div className="container"  style={{textAlign:'center'}}>
                             <h2>Informations personnelles</h2>
+
+                            {this.state.alert == 1 ?
+                                <div id="succes-alert" className="alert alert-success" role="alert">
+                                    Votre bon de commande vas bientot être pris en compte par nos service.
+                                </div>
+                            :null}
+                            {this.state.alert == 2 ?
+                                <div id="error-alert" className="alert alert-danger" role="alert">
+                                    Une Erreur est survenue, vérifier vos champs saisie.
+                                </div>
+                            :null}
+
                             <div className="card text-center">
                                 <div className="card-header">
                                     Bon de commande
                                 </div>
                                 <div className="card-body">
 
-                                    <div className="form-group">
-                                        <label htmlFor="firstname">Prenom*<span></span> :</label>
-                                        <input id="firstname" name="firstname" type="text"
-                                               onChange={this.handleChangePrenom}
-                                               value={this.state.prenom} required
-                                               minLength={3}
-                                               maxLength={20}
-                                        />
+
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <label htmlFor="firstname"><strong>Prenom</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <input id="firstname" name="firstname" type="text"
+                                                   onChange={this.handleChangePrenom}
+                                                   value={this.state.prenom} required
+                                                   minLength={3}
+                                                   maxLength={20}
+                                            />
+                                        </div>
+                                        <div className="col">
+                                            <label htmlFor="name"><strong>Nom</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <input id="name" name="name" type="text"
+                                                   onChange={this.handleChangeName}
+                                                   value={this.state.value} required
+                                                   minLength={3}
+                                                   maxLength={20}
+                                            />
+                                        </div>
                                     </div>
 
-                                    <div className="form-group">
-                                        <label htmlFor="name">Nom*<span></span> :</label>
-                                        <input id="name" name="name" type="text"
-                                               onChange={this.handleChangeName}
-                                               value={this.state.value} required
-                                               minLength={3}
-                                               maxLength={20}
-                                        />
+
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <label htmlFor="tel"><strong>Télephone</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <input id="tel" name="tel" type="text" placeholder="+33 .."
+                                                   onChange={this.handleChangeTel}
+                                                   value={this.state.telephone} required
+                                            />
+                                        </div>
+                                        <div className="col">
+                                            <label htmlFor="email"><strong>Email</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <input id="email" name="email" type="text"
+                                                   onChange={this.handleChangeEmail}
+                                                   value={this.state.email} required
+
+                                            />
+                                        </div>
                                     </div>
+                                    <hr/>
 
                                     <div className="form-group">
-                                        <label htmlFor="tel">Télephone*<span></span> :</label>
-                                        <input id="tel" name="tel" type="text" placeholder="+33 .."
-                                               onChange={this.handleChangeTel}
-                                               value={this.state.telephone} required
-                                        />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="email">Email*<span></span> :</label>
-                                        <input id="email" name="email" type="text"
-                                               onChange={this.handleChangeEmail}
-                                               value={this.state.email} required
-
-                                        />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <label htmlFor="email">Adresse*<span></span> :</label>
+                                        <label htmlFor="adresse"><strong>Adresse</strong><span style={{color :'red'}}>*</span> :</label>
                                         <input id="adresse" name="adresse" type="text"
                                                onChange={this.handleChangeAdresse}
                                                value={this.state.adresse} required
                                         />
                                     </div>
 
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <label htmlFor="postal"><strong>Code Postal</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <input id="postal" name="postal" type="number"
+                                                   onChange={this.handleChangeCP}
+                                                   value={this.state.code} required
+                                            />
+                                        </div>
+                                        <div className="col">
+                                            <label htmlFor="pays"><strong>Pays</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <input id="pays" name="pays" type="text"
+                                                onChange={this.handleChangePays}
+                                                   placeholder="France"
+                                                   value={this.state.pays} required
+                                            />
+                                        </div>
+                                    </div>
 
-                                    <div className="form-group">
-                                        <label htmlFor="age">Date de livraison*<span></span> :</label>
-                                        <input id="date" name="date" type="date" placeholder="1997-02-22"
-                                               onChange={this.handleChangeDate}
-                                               value={this.state.age} required
-                                        />
+                                    <hr/>
+
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <label htmlFor="date"><strong>Date de livraison</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <input id="date" name="date" type="date" placeholder="1997-02-22"
+                                                   onChange={this.handleChangeDate}
+                                                   value={this.state.date} required
+                                            />
+                                        </div>
+                                        <div className="col">
+                                            <label htmlFor="horaire"><strong>Horaire de livraison souhaité</strong>:</label>
+                                            <input id="heure" name="heure" type="number" placeholder="18 heures"
+                                                   onChange={this.handleChangeHoraire}
+                                                   value={this.state.horaire}
+                                                   min="1" max="24"
+                                                   required
+                                            />
+
+                                        </div>
                                     </div>
 
                                     <div className="form-group">
-                                        <label htmlFor="horaire">Horaire</label>
-                                        <input id="heure" name="heure" type="number" placeholder="18 heures"
-                                               onChange={this.handleChangeHoraire}
-                                               value={this.state.horaire}
-                                               aria-valuemax={2}
-                                               min="1" max="24"
-                                               required
-                                        />
+
                                     </div>
 
                                     <button className="btn btn-primary" type="submit">Envoyer</button>
                                 </div>
                                 <div className="card-footer text-muted">
-                                    <span>Champs obligatoires marqué par *</span>
+                                    <span>Champs obligatoires marqués par <span style={{color :'red'}}>*</span></span>
                                 </div>
 
                             </div>

@@ -5,13 +5,18 @@ class Dashboard extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            Order: {}
+            Order: {},
+            alert: 0,
         };
         this.commandValidate = this.commandValidate.bind(this);
         this.commandCancelled = this.commandCancelled.bind(this);
     }
 
     componentDidMount() {
+        setTimeout(function () { //Start the timer
+            this.setState({alert: 0}); //After 1 second, set render to true
+        }.bind(this), 1000)
+
         this.getData();
     }
 
@@ -36,11 +41,11 @@ class Dashboard extends Component {
             id: id
         }).then(data => {
             if (data.status === 200) {
-                console.log(data);
-                window.location.reload()
+                this.setState({alert: 1});
+                window.location.reload();
             } else if (data.status === 400) {
-                console.log(data);
-                alert('An error occured.')
+                this.setState({alert: 2});
+                window.location.reload();
             }
         }).catch((err) => {
             console.log(err);
@@ -53,11 +58,11 @@ class Dashboard extends Component {
             id: id
         }).then(data => {
             if (data.status === 200) {
-                console.log(data);
-                window.location.reload()
+                this.setState({alert: 3});
+                window.location.reload();
             } else if (data.status === 400) {
-                console.log(data);
-                alert('An error occured.');
+                this.setState({alert: 2});
+                window.location.reload();
             }
         }).catch((err) => {
             console.log(err);
@@ -71,7 +76,25 @@ class Dashboard extends Component {
             <React.Fragment>
                 <div className="account-first-section">
                     <div className="account-info">
-                        <div className="container-md">
+                        <div className="container" style={{textAlign: 'center'}}>
+                            <h2>Traitement</h2>
+
+                            {this.state.alert == 1 ?
+                                <div id="succes-alert" className="alert alert-success" role="alert">
+                                    La commande a était validé, un mail as était envoyé avec succès.
+                                </div>
+                                : null}
+                            {this.state.alert == 2 ?
+                                <div id="error-alert" className="alert alert-danger" role="alert">
+                                    Une Erreur est survenue.
+                                </div>
+                                : null}
+                            {this.state.alert == 3 ?
+                                <div id="succes-alert" className="alert alert-success" role="alert">
+                                    La commande a était réfusé, un mail as était envoyé avec succès.
+                                </div>
+                                : null}
+
 
                             <div className="card text-center">
                                 <div className="card-header">
@@ -80,17 +103,39 @@ class Dashboard extends Component {
                                 <div className="card-body">
                                     <h3>Statut de la commande : {command.demande}</h3>
                                     <hr/>
-                                    <div className="form-group">
-                                        <p>Prenom: {command.prenom}</p>
-                                        <p>Nom: {command.name}</p>
-                                        <p>Email: {command.email}</p>
-                                        <p>Tel: {command.telephone}</p>
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <p><strong>Prénom: </strong>{command.prenom}</p>
+                                        </div>
+                                        <div className="col">
+                                            <p><strong>E-mail: </strong>{command.email}</p>
+                                        </div>
+                                    </div>
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <p><strong>Nom: </strong>{command.name}</p>
+                                        </div>
+                                        <div className="col">
+                                            <p><strong>Téléphone: </strong>{command.telephone}</p>
+                                        </div>
                                     </div>
                                     <hr/>
-                                    <p>Adresse de livraison: {command.adresse}</p>
+
+                                    <p><strong>Adresse de livraison: </strong><br/> {command.adresse}</p>
+                                    <div className="form-row">
+                                        <div className="col">
+                                            <p><strong>Code Postal: </strong>{command.postal}</p>
+                                        </div>
+                                        <div className="col">
+                                            <p><strong>Pays: </strong>{command.pays}</p>
+                                        </div>
+                                    </div>
+
+
                                     <hr/>
-                                    <p>a livrer le {command.date}</p>
-                                    <p>à {command.horaire} heures</p>
+                                    <hr/>
+                                    <p><strong>Date de  préférence de livraison : </strong>{command.date}</p>
+                                    <p><strong>De préference à :</strong> {command.horaire} heures</p>
 
                                     <div className="form-group" style={{padding: 10, margin: 10}}>
                                         <button style={{padding: 10, margin: 10}}
@@ -108,7 +153,7 @@ class Dashboard extends Component {
 
                                 </div>
                                 <div className="card-footer text-muted">
-                                    commande crée le : {command.createdAt}
+                                    <strong>Commande crée le :</strong> {command.createdAt}
                                 </div>
                             </div>
 

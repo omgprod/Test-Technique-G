@@ -68,6 +68,8 @@ app.post('/new', (req, res) => {
         email: req.body.email,
         adresse: req.body.adresse,
         telephone: req.body.telephone,
+        postal: req.body.postal,
+        pays: req.body.pays,
         date: req.body.date,
         horaire: req.body.horaire,
     });
@@ -92,15 +94,17 @@ app.post('/new', (req, res) => {
 
 /**** GET ALL COMMANDS ****/
 app.get('/fetch', (req, res) => {
-    Commands.find({}, function (err, commands) {
-        if (err) {
-            throw err
-        } else {
-            return res.status(200).send(
-                commands
-            );
-        }
-    });
+    Commands.find({})
+        .sort([['createdAt', -1]])
+        .exec(function (err, commands) {
+            if (err) {
+                throw err
+            } else {
+                return res.status(200).send(
+                    commands
+                );
+            }
+        });
 });
 
 /**** GET ONE COMMAND ****/

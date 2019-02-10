@@ -3,39 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d3ce4ced-2fd5-43e4-9bf3-4f9ec885b8f7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/img/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/public/img/logo.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/_general.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_account.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_address.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_contact.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_history.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_info.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_inprocess.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_newsletter.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_panel.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/account/_password.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/auth/_login.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/auth/_register.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/cart/cart.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/home/_pro.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/home/_product.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/home/_quality.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/home/_slider.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/product/_container.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/product/_filter.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/product/_product.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/product/_product_fiche.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/style.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/template/_footer.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/template/_header.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/template/_input.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/public/scss/template/_nav.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/Schema/Commands.js" beforeDir="false" afterPath="$PROJECT_DIR$/Api/Schema/Commands.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/Api/api.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Components/Dashboard.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Dashboard.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-app/src/Components/Form.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Form.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Header.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Header.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/Components/Treatment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/Components/Treatment.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-app/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/my-app/src/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -45,6 +18,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Api/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-4">
+              <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Api/Schema/Commands.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-app/src/App.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -58,10 +49,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/my-app/src/App.css">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-app/public/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
+            <state relative-caret-position="-459">
+              <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -69,32 +65,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-app/src/Components/Form.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1649">
-              <caret line="97" column="80" selection-start-line="97" selection-start-column="80" selection-end-line="97" selection-end-column="80" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/Components/Treatment.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="102" column="48" lean-forward="true" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="74" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/my-app/src/Components/Header.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="143">
-              <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
+            <state relative-caret-position="262">
+              <caret line="103" selection-start-line="103" selection-end-line="106" selection-end-column="25" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -103,10 +75,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/my-app/src/Components/Treatment.jsx">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="155" column="62" selection-start-line="155" selection-start-column="62" selection-end-line="155" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/my-app/src/Components/Dashboard.jsx">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="56" column="65" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
+            <state relative-caret-position="408">
+              <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -127,24 +111,25 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Api/api.js" />
-        <option value="$PROJECT_DIR$/my-app/src/Components/Treatment.jsx" />
         <option value="$PROJECT_DIR$/my-app/src/Components/Header.jsx" />
-        <option value="$PROJECT_DIR$/my-app/public/css/style.css" />
-        <option value="$PROJECT_DIR$/my-app/src/Components/Form.jsx" />
         <option value="$PROJECT_DIR$/my-app/src/App.js" />
+        <option value="$PROJECT_DIR$/my-app/src/index.js" />
+        <option value="$PROJECT_DIR$/my-app/public/css/style.css" />
+        <option value="$PROJECT_DIR$/Api/api.js" />
+        <option value="$PROJECT_DIR$/Api/Schema/Commands.js" />
+        <option value="$PROJECT_DIR$/my-app/src/Components/Form.jsx" />
         <option value="$PROJECT_DIR$/my-app/src/Components/Dashboard.jsx" />
+        <option value="$PROJECT_DIR$/my-app/src/Components/Treatment.jsx" />
       </list>
     </option>
   </component>
   <component name="PhpServers">
     <servers />
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="422" />
-    <option name="y" value="-14" />
-    <option name="width" value="978" />
-    <option name="height" value="1039" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="-8" />
+    <option name="width" value="977" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -158,6 +143,17 @@
             <path>
               <item name="Test-Technique-G" type="b2602c69:ProjectViewProjectNode" />
               <item name="Test-Technique-G" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Test-Technique-G" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Test-Technique-G" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Test-Technique-G" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Test-Technique-G" type="462c0819:PsiDirectoryNode" />
+              <item name="Api" type="462c0819:PsiDirectoryNode" />
+              <item name="Schema" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Test-Technique-G" type="b2602c69:ProjectViewProjectNode" />
@@ -223,12 +219,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1549805177226</updated>
-      <workItem from="1549805180912" duration="7784000" />
+      <workItem from="1549805180912" duration="14457000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7784000" />
+    <option name="totallyTimeSpent" value="14457000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -261,44 +257,10 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Api/api.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="242" column="21" lean-forward="true" selection-start-line="242" selection-start-column="21" selection-end-line="242" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/Components/Treatment.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="102" column="48" lean-forward="true" selection-start-line="102" selection-start-column="48" selection-end-line="102" selection-end-column="74" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="58" column="29" selection-start-line="58" selection-start-column="29" selection-end-line="58" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/my-app/src/Components/Header.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/my-app/src/Components/Form.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1649">
-          <caret line="97" column="80" selection-start-line="97" selection-start-column="80" selection-end-line="97" selection-end-column="80" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -315,10 +277,64 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/App.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="58" selection-start-line="6" selection-start-column="58" selection-end-line="6" selection-end-column="58" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-459">
+          <caret line="12" column="6" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Api/Schema/Commands.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="21" lean-forward="true" selection-start-line="16" selection-start-column="21" selection-end-line="16" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/Components/Form.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="103" selection-start-line="103" selection-end-line="106" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/my-app/src/Components/Dashboard.jsx">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="56" column="65" selection-start-line="56" selection-start-column="65" selection-end-line="56" selection-end-column="65" />
+        <state relative-caret-position="408">
+          <caret line="24" column="63" selection-start-line="24" selection-start-column="63" selection-end-line="24" selection-end-column="63" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Api/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="67" column="30" lean-forward="true" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/my-app/src/Components/Treatment.jsx">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="155" column="62" selection-start-line="155" selection-start-column="62" selection-end-line="155" selection-end-column="62" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
