@@ -42,7 +42,7 @@ class Dashboard extends Component {
             <React.Fragment>
                 <div className="account-first-section">
                     <div className="account-info">
-                        <div className="container-lg">
+                        <div className="container-lg" style={{textAlign:'center'}}>
                             <h2>Dashboard</h2>
                             <div style={{maxWidth: '100%'}}>
                                 <table className="table table-responsive-lg table-hover">
@@ -55,8 +55,8 @@ class Dashboard extends Component {
                                         <th scope="col">Email</th>
                                         <th scope="col">Adresse</th>
                                         <th scope="col">Telephone</th>
-                                        <th scope="col">Livraison</th>
-                                        <th scope="col">Horaire</th>
+                                        <th scope="col">Date de livraison</th>
+                                        <th scope="col">Horaire de livraison</th>
                                         <th scope="col">Traitement</th>
                                         <th scope="col">Traiter</th>
                                     </tr>
@@ -77,8 +77,10 @@ class Dashboard extends Component {
                                                 <td>{item.horaire}</td>
                                                 <td>{item.demande}</td>
                                                 <td>
-                                                    <button onClick={() => this.handleClick(item._id)}>
-                                                        traiter la commande
+                                                    <button
+                                                        className="btn btn-danger"
+                                                        onClick={() => this.handleClick(item._id)}>
+                                                        <i className="fas fa-wrench" style={{color: 'white'}}></i>
                                                     </button>
                                                 </td>
                                             </tr>

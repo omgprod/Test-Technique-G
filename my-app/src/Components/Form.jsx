@@ -94,8 +94,8 @@ class Form extends Component {
         return (
             <React.Fragment>
                 <div className="account-first-section">
-                    <form className="account-info" onSubmit={this.handleSubmit}>
-                        <div className="container">
+                    <form className="account-info" style={{backgroundColor: '#68a3c0'}} onSubmit={this.handleSubmit}>
+                        <div className="container"  style={{textAlign:'center'}}>
                             <h2>Informations personnelles</h2>
                             <div className="card text-center">
                                 <div className="card-header">

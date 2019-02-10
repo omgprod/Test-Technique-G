@@ -19,15 +19,15 @@ export default class Header extends Component {
                         <div className="d-flex">
                             <div className="auth-header">
                                 <div>
-                                    <i className="fas fa-shopping-basket"></i>
+                                    <i className="fas fa-shopping-basket" style={{color: 'white'}}></i>
                                     <a href="http://127.0.0.1:3000/index">
-                                        <button>Formulaire<i className="fas fa-angle-right"></i></button>
+                                        <button><span style={{color: 'white'}}>Formulaire</span><i className="fas fa-angle-right" style={{color: 'white'}}></i></button>
                                     </a>
                                 </div>
                                 <div>
-                                    <i className="fas fa-tools"></i>
+                                    <i className="fas fa-tools" style={{color: 'white'}}></i>
                                     <a href="http://127.0.0.1:3000/dashboard">
-                                        <button>Dashboard<i className="fas fa-angle-right"></i></button>
+                                        <button><span style={{color: 'white'}}>Dashboard</span><i className="fas fa-angle-right" style={{color: 'white'}}></i></button>
                                     </a>
                                 </div>
                             </div>
