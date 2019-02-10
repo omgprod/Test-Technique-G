@@ -1,0 +1,344 @@
+.account {
+    .account-content {
+
+        .account-address {
+                    background-color: #fff;
+
+            margin-top: 2rem;
+            @include box-shadow(0px 0px 12px 0px rgba(0, 0, 0, 0.32));
+            padding: 20px 20px;
+            width: 100%;
+
+            .carnet {
+                text-align: center;
+                color: $blue;
+                font-size: 23px;
+            }
+
+            .d-flex {
+                width: 100%;
+                justify-content: center;
+
+                .group-adress {
+                    display: flex;
+                    align-items: center;
+                    min-width: 46%;
+
+                    .group-adress-legende {
+                        width: 30%;
+                        background-color: $blue;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: #fff;
+                        padding-top: 9%;
+                        height: 100%;
+
+                        p {
+                            text-align: center;
+
+                            span {
+                                display: block;
+                                font-size: 13px;
+                            }
+                        }
+
+                        i {
+                            color: #fff;
+                            font-size: 35px;
+                        }
+                    }
+
+
+                    .group-adress-content {
+                        padding: 30px 10px 30px 30px;
+                        width: 70%;
+                        height: 100%;
+                        background-color: $white;
+                        font-size: 15px;
+                        font-weight: 100;
+                        position: relative;
+
+                        a {
+                            position: absolute;
+                            top: 6px;
+                            right: 7px;
+
+                            i {
+                                font-size: 25px;
+                                color: $black;
+                                @include transition(0.2s);
+
+                                &:hover {
+                                    color: $blue;
+                                }
+
+                            }
+                        }
+
+                    }
+
+                    &.mr {
+                        margin-right: 1rem;
+                    }
+
+                    &.ml {
+                        margin-left: 1rem;
+                    }
+                }
+            }
+
+            .other-title {
+                font-weight: 100;
+                text-align: center;
+            }
+
+            .other-adress {
+                display: flex;
+                justify-content: space-around;
+                flex-wrap: wrap;
+
+                .other-adress-container {
+                    display: flex;
+                    margin-bottom: 20px;
+
+                    div {
+                        position: relative;
+                        padding: 30px;
+                        border: 1px solid $white;
+
+                        a {
+                            position: absolute;
+                            top: 3px;
+
+                            &.delete {
+                                right: 5px;
+                            }
+
+                            &.edit {
+                                right: 29px;
+                            }
+
+                            i {
+                                font-size: 20px;
+                                @include transition(0.2s);
+
+                                &:hover {
+                                    color: $blue;
+                                }
+
+                                &.fa-trash-alt {
+                                    &:hover {
+                                        color: $red;
+                                    }
+
+                                }
+                            }
+                        }
+
+                        button {
+                            font-size: 15px;
+                            border: 2px solid $blue;
+                            background-color: transparent;
+                            color: $blue;
+                            border-radius: 5px;
+                            padding: 5px;
+                            margin-top: 20px;
+                            @include transition(0.2s);
+
+                            &:hover {
+                                background-color: $blue;
+                                color: #fff;
+                            }
+
+                        }
+                    }
+                }
+            }
+
+            .add-adress {
+                display: block;
+                margin: 2rem auto 10px auto;
+                color: #fff;
+                padding: 10px 20px;
+                font-size: 18px;
+                background-color: $blue;
+                border-radius: 5px;
+                border: 0;
+                @include transition(0.2s);
+
+                &:hover {
+                    background-color: darken($blue, 10%);
+                }
+            }
+        }
+
+
+
+
+
+        .cf:before,
+        .cf:after {
+            content: "";
+            display: table;
+        }
+
+        .cf:after {
+            clear: both;
+        }
+
+        #modal {
+            left: 50%;
+            margin: -250px 0 0 -40%;
+            opacity: 0;
+            position: absolute;
+            top: -50%;
+            visibility: hidden;
+            width: 80%;
+            box-shadow: 0 3px 7px rgba(0, 0, 0, .25);
+            box-sizing: border-box;
+            transition: all 0.4s ease-in-out;
+            -moz-transition: all 0.4s ease-in-out;
+            -webkit-transition: all 0.4s ease-in-out;
+
+            &:target {
+                opacity: 1;
+                top: 10%;
+                visibility: visible;
+            }
+
+
+            .modal-content {
+                background: #fff;
+                position: relative;
+                z-index: 20;
+                border-radius: 5px;
+
+                .copy,
+                .header,
+                .footer {
+                    padding: 15px;
+                }
+
+                .header,
+                .footer {
+                    border-bottom: 1px solid #fff;
+                    border-radius: 5px 5px 0 0;
+                }
+
+                .header {
+                    h2 {
+                        margin: 0;
+                        color: $blue;
+                        font-weight: 100;
+                        text-align: center
+                    }
+                }
+
+                .footer {
+                    border: none;
+                    border-top: 1px solid #fff;
+                    border-radius: 0 0 5px 5px;
+                    text-align: center;
+                    padding: 20px;
+
+                }
+
+                .copy {
+                    background: #fff;
+                    display: flex;
+                    justify-content: center;
+                    flex-direction: column;
+                    align-items: center;
+                }
+
+                .close {
+                    position: absolute;
+                    right: 6px;
+
+                    top: 5px;
+
+                    i {
+                        font-size: 25px;
+                    }
+                }
+
+                span {
+                    font-size: 12px;
+                    font-style: italic;
+
+                    &:before {
+                        content: " * ";
+                        color: $red;
+                    }
+                }
+
+                label {
+                    display: block;
+                    margin-top: 25px;
+                    margin-bottom: 15px;
+
+                    &.no-marge {
+                        margin-top: 0;
+                    }
+                }
+
+                .form-group {
+                    width: 50%;
+
+                    &.radio {
+                        div {
+                            display: flex;
+
+                            &:first-child {
+                                margin-right: 20px
+                            }
+                        }
+                    }
+
+                    input[type="text"],
+                    input[type="tel"] {
+                        border: 0;
+                        border-radius: 0;
+                        padding: 5px 10px;
+                        @include box-shadow(0px 0px 5px 1px rgba(0, 0, 0, 0.16));
+                        background-color: #fff;
+                        font-weight: 300;
+
+                        &:disabled {
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+
+                button {
+                    display: block;
+                    font-size: 20px;
+                    padding: 10px 15px;
+                    background-color: $blue;
+                    border-radius: 5px;
+                    border: 0;
+                    color: #fff;
+                    margin: 3rem auto 0rem auto;
+                    @include transition(0.2s);
+
+                    &:hover {
+                        background-color: darken($blue, 10%);
+                    }
+                }
+
+            }
+
+            .overlay {
+                background-color: #000;
+                background: rgba(0, 0, 0, .5);
+                height: 100%;
+                left: 0;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 10;
+            }
+        }
+    }
+}

@@ -1,0 +1,152 @@
+footer {
+    padding-bottom: 3rem;
+    background-color: $black;
+
+    .info-achat {
+        margin-top: 3rem;
+        width: 100%;
+        padding: 25px 0;
+        background-color: #fff;
+        @include box-shadow(0px -3px 7px -3px rgba(0, 0, 0, 0.36));
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+
+            div {
+                display: flex;
+
+                i {
+                    margin-right: 10px;
+                    font-size: 40px;
+                }
+
+                p {
+                    font-size: 15px;
+                    text-transform: uppercase;
+
+                    span {
+                        color: $blue;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .option-achat {
+        width: 100%;
+        color: #fff;
+
+
+        .container {
+            .payement {
+                padding: 40px 0 40px 100px;
+                max-width: 410px;
+                background: url("../img/payment.png") 100px 65px no-repeat;
+            }
+
+            .shipping {
+                padding: 40px 0;
+                max-width: 491px;
+                background: url("../img/shipping.png") 0 65px no-repeat;
+            }
+        }
+    }
+
+    .informations {
+        color: #fff;
+        margin-top: 3rem;
+
+        span {
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+
+            &:after {
+
+                content: "";
+                width: 40px;
+                height: 2px;
+                background-color: #fff;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+            }
+        }
+
+        ul {
+            padding: 0;
+            list-style: none;
+
+            li {
+                a {
+                    color: #fff;
+                    font-size: 13px;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+
+    .social {
+        margin-top: 2rem;
+        color: #fff;
+
+        .row {
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        span {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            li {
+                a {
+                    i {
+                        color: #fff;
+                        font-size: 40px;
+                        margin-right: 10px;
+
+                        &.fa-youtube-square {
+                            color: #dc472e;
+                        }
+                        
+                        &.fa-twitch{
+                            color: #6340a4;
+                        }
+                        
+                        &.fa-facebook{
+                            color: #39559f;
+                        }
+                        
+                        &.fa-instagram{
+                            color: #c535a3;
+                        }
+                        &.fa-twitter-square{
+                            color: #4fabf1;
+                        }
+                        
+                        &.fa-linkedin{
+                            margin-right: 0;
+                            color: #0076b5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

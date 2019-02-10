@@ -1,0 +1,157 @@
+.effect-group {
+  float: left;
+  width: 69%;
+  position: relative;
+  left: 77px;
+  margin-bottom: 34px;
+}
+
+.effect {
+  border: 1px solid #ccc;
+  padding: 7px 14px;
+  transition: 0.4s;
+  background: transparent;
+
+  & ~ .focus-border:before,
+  & ~ .focus-border:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: $blue;
+    transition: 0.3s;
+  }
+
+  & ~ .focus-border:after {
+    top: auto;
+    bottom: 0;
+    left: auto;
+    right: 0;
+  }
+
+  & ~ .focus-border i:before,
+  & ~ .focus-border i:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 0;
+    background-color: $blue;
+    transition: 0.4s;
+  }
+
+  & ~ .focus-border i:after {
+    left: auto;
+    right: 0;
+    top: auto;
+    bottom: 0;
+  }
+
+  &:focus ~ .focus-border:before,
+  &:focus ~ .focus-border:after {
+    width: 100%;
+    transition: 0.3s;
+  }
+
+  &:focus ~ .focus-border i:before,
+  &:focus ~ .focus-border i:after {
+    height: 100%;
+    transition: 0.4s;
+  }
+
+  & ~ label {
+    position: absolute;
+    left: 14px;
+    width: 100%;
+    top: 10px;
+    color: #aaa;
+    transition: 0.3s;
+    z-index: -1;
+    letter-spacing: 0.5px;
+    opacity: 0;
+  }
+
+  &:focus ~ label {
+    top: -18px;
+    left: 0;
+    font-size: 12px;
+    color: $blue;
+    transition: 0.3s;
+    opacity: 1;
+    & span{
+      color: $red
+
+    }
+  }
+
+}
+
+.custom-radios {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+
+  &-title {
+    margin-right: 70px;
+
+    span {
+      color: $red;
+    }
+  }
+
+  div {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    + label {
+      color: #333;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+
+      span {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 2px solid #FFFFFF;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        line-height: 28px;
+
+        i {
+          opacity: 0;
+          transition: all .3s ease;
+          color: #fff;
+        }
+      }
+    }
+
+    p {
+      display: inline-block;
+    }
+
+    &.colored + label span {
+      background-color: $blue;
+    }
+
+    &:checked + label span i {
+      opacity: 1;
+    }
+  }
+}
+

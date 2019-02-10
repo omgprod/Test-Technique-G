@@ -1,0 +1,95 @@
+.account {
+     .account-content{
+         
+        .account-info {
+                    background-color: #fff;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            @include box-shadow(0px 0px 12px 0px rgba(0, 0, 0, 0.32));
+            width: 100%;
+            padding: 20px 40px;
+            h3 {
+                margin-top: 10px;
+                font-size: 23px;
+                color: $blue;
+            }
+
+            span {
+                font-size: 12px;
+                font-style: italic;
+
+                &:before {
+                    content: "* ";
+                    color: $red;
+                }
+            }
+
+            & .row {
+                width: 100%;
+                justify-content: space-between;
+                align-items: flex-end;
+
+                label {
+                    display: block;
+                    margin-top: 40px;
+                    margin-bottom: 15px;
+
+                    &.no-marge {
+                        margin-top: 0;
+                    }
+                }
+
+                .form-group {
+                    margin-top: 10px;
+                    width: 100%;
+
+                    &.radio {
+                        div {
+                            display: flex;
+
+                            &:first-child {
+                                margin-right: 20px
+                            }
+                        }
+
+                        input {
+                            width: auto;
+                        }
+                    }
+
+                    input[type="text"],
+                    input[type="date"] {
+                        border: 0;
+                        border-radius: 0;
+                        padding: 5px 10px;
+                        @include box-shadow(0px 0px 5px 1px rgba(0, 0, 0, 0.16));
+                        background-color: #fff;
+                        font-weight: 300;
+
+                        &:disabled {
+                            cursor: not-allowed;
+                        }
+                    }
+                }
+            }
+
+            button {
+                display: block;
+                font-size: 20px;
+                padding: 10px 15px;
+                background-color: $blue;
+                border-radius: 5px;
+                border: 0;
+                color: #fff;
+                margin: 3rem auto 0rem auto;
+                @include transition(0.2s);
+
+                &:hover {
+                    background-color: darken($blue, 10%);
+                }
+            }
+        }
+    }
+}

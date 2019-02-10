@@ -1,0 +1,161 @@
+header {
+    padding: 1.5rem 0 1.5rem 0;
+    background-color: #fff;
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    img {
+        height: 60px;
+    }
+
+    form {
+        display: flex;
+        @include box-shadow(0px 0px 12px 0px rgba(0, 0, 0, 0.32));
+
+        button {
+            background-color: $blue;
+            border: none;
+
+            i {
+                color: #fff;
+                font-size: 25px;
+            }
+        }
+
+        input {
+            padding: 10px;
+            width: 400px;
+            font-size: 12px;
+            font-weight: lighter;
+            font-style: italic;
+            color: lighten(black, 30%);
+            border: none;
+
+        }
+    }
+
+    .auth-header {
+        display: flex;
+
+        div,
+        a {
+            color: $black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+
+            &:first-child {
+                position: relative;
+                margin-right: 1rem !important;
+
+                div {
+                    display: none;
+                    position: absolute;
+                    background-color: #fff;
+                    z-index: 1;
+                    border: 1px solid $black;
+                    top: 58px;
+                    right: -95px;
+                    padding: 0 30px 30px 30px;
+                    cursor: default;
+
+                    &:before {
+                        content: "";
+                        width: 15px;
+                        height: 15px;
+                        background-color: #fff;
+                        position: absolute;
+                        top: -8px;
+                        right: 98px;
+                        transform: rotate(45deg);
+                        border-left: 1px solid #919191;
+                        border-top: 1px solid #919191;
+                    }
+
+                    h3 {
+                        font-weight: normal;
+
+                        &:nth-of-type(2) {
+                            margin: 15px 0 0 0;
+                        }
+                    }
+
+                    form {
+                        flex-direction: column;
+                        align-items: center;
+                        box-shadow: none;
+                        
+
+                        input {
+                            border: 1px solid rgba(0,0,0,.5);
+                            border-radius: 5px;
+                            display: block;
+                            width: 200px;
+                            padding: .375rem .75rem;
+                            font-size: 1rem;
+                            &:nth-child(2) {
+                                margin-top: 8px;
+                            }
+                        }
+                    }
+
+                    button {
+                        border: 0;
+                        display: inline-block;
+                        margin-top: 1rem;
+                        border-radius: 5px;
+                        background-color: $blue;
+                        color: #fff;
+                        padding: 10px 15px;
+                        font-size: 18px;
+                        line-height: 18px;
+                        @include transition(0.5s);
+
+                        i {
+                            font-size: 16px;
+                            margin-bottom: 0;
+                            color: $white;
+                        }
+
+                        &:hover {
+                            background-color: darken($blue, 10%);
+                        }
+                    }
+
+                    hr {
+                        margin-top: 15px;
+                        width: 100%;
+                        border: 0;
+                        height: 1px;
+                        background-image: -webkit-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                        background-image: -moz-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                        background-image: -ms-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                        background-image: -o-linear-gradient(left, #f0f0f0, #8c8b8b, #f0f0f0);
+                    }
+                }
+            }
+
+            &:last-child {
+                margin-left: 1rem !important;
+            }
+
+            p {
+                text-transform: uppercase;
+                font-size: 13px;
+            }
+        }
+
+        i {
+            font-size: 25px;
+            margin-bottom: 5px;
+
+            &.fa-shopping-cart {
+                margin-right: 8px;
+            }
+        }
+    }
+}

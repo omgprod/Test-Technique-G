@@ -1,0 +1,250 @@
+.products {
+    flex-direction: column;
+    margin: 3rem 0;
+    padding: 0;
+
+    .products-list {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .left {
+            display: flex;
+            align-items: center;
+
+            .pagination {
+                background: lighten(#fff, 5%);
+                padding: 0.7rem;
+                @include box-shadow(0px 5px 5px -3px rgba(0, 0, 0, 0.23));
+                text-align: center;
+                width: 20rem;
+
+                &:after {
+                    clear: both;
+                    content: "";
+                    display: table;
+                }
+
+                ul {
+                    width: 100%;
+                }
+
+                ul,
+                li {
+                    list-style: none;
+                    display: inline;
+                    padding-left: 0px;
+                }
+
+                li {
+                    &:hover {
+                        a {
+                            color: lighten(#fff, 5%);
+                            background-color: $blue;
+                            border: solid 1px $blue;
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            color: lighten(#fff, 5%);
+                            background-color: $blue;
+                            border: solid 1px $blue;
+                        }
+                    }
+
+                    &:first-child {
+                        float: left;
+
+                        a {
+                            display: inline-block;
+
+                            &:after {
+                                content: "<";
+                            }
+                        }
+                    }
+
+
+                    &:last-child {
+                        float: right;
+
+                        a {
+                            display: inline-block;
+
+                            &:after {
+                                content: ">";
+                            }
+                        }
+                    }
+
+                    a {
+                        border: solid 1px darken(#fff, 10%);
+                        border-radius: 0.2rem;
+                        color: $black;
+                        text-decoration: none;
+                        text-transform: uppercase;
+                        text-align: center;
+                        padding: 0.3rem 0.6rem;
+                        @include transition(0.2s);
+                        display: inline-block;
+
+                    }
+
+                }
+            }
+
+            span {
+                margin-left: 1rem;
+                font-size: 10px;
+                color: $black;
+            }
+        }
+
+        .right {
+		    width: 200px;
+			div{
+						border-radius:0;
+			border:0;
+
+			}
+			.css-10nd86i{
+			@include box-shadow(0px 5px 5px -3px rgba(0, 0, 0, 0.23));
+			}
+            select {
+                cursor: pointer;
+                @include box-shadow(0px 5px 5px -3px rgba(0, 0, 0, 0.23));
+                @include transition(0.5s);
+                border: 0;
+                padding: 10px 20px;
+                outline: none;
+                color: $black;
+
+                &:hover {
+                    @include box-shadow(0px 5px 5px -3px rgba(0, 0, 0, 0.40));
+                }
+
+                option {
+                    &:hover {
+                        background-color: $blue;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .product {
+        margin-top: 3rem;
+        padding: 0;
+
+        .fiche {
+            @include box-shadow(0px 0px 5px 0px rgba(0, 0, 0, 0.29));
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: 20px 0;
+            background-color: #fff;
+
+
+            .thumb {
+                width: 200px;
+
+                img {
+                    max-width: 100%;
+                    padding-top: 10px;
+                }
+            }
+
+            .meta {
+                display: flex;
+                flex-direction: column;
+                width: 400px;
+
+                a {
+                    font-size: 18px;
+                    color: $black;
+
+                    h3 {
+                        font-size: 18px;
+                        margin: 5px 0;
+                    }
+                }
+
+                em {
+                    font-size: 13px;
+                    margin: 5px 0;
+                    font-style: normal;
+                }
+
+                .avis {
+                    display: flex;
+                    margin: 5px 0;
+
+                    .star {
+                        display: flex;
+                        align-items: center;
+                        color: $black;
+
+                        svg {
+                            width: 20px;
+
+                            &.checked {
+                                color: #f1c40f;
+                            }
+                        }
+                    }
+
+                    span {
+                        font-size: 15px;
+                        margin-left: 1.5rem;
+                    }
+                }
+            }
+
+
+            .available {
+                p {
+                    &.instock {
+                        color: #2ecc71;
+                    }
+
+                    &.soldout {
+                        color: #e74c3c;
+                    }
+                }
+            }
+
+            .price {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h3 {
+                    font-size: 25px;
+                    color: #ff0700;
+                }
+
+                button {
+                    border: none;
+
+                    i {
+                        color: #fff;
+                        font-size: 25px;
+                        background-color: #27ae60;
+                        border-radius: 5px;
+                        padding: 10px 10px 10px 7px;
+                        @include transition(0.3s);
+
+                        &:hover {
+                            background-color: darken(#27ae60, 10%);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}

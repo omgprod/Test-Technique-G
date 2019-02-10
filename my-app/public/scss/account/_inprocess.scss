@@ -1,0 +1,31 @@
+.account {
+    .account-content {
+        .account-second-section {
+            .order-inprocess {
+                        background-color: #fff;
+
+                @include box-shadow(0px 0px 12px 0px rgba(0, 0, 0, 0.32));
+                background-color: #ffffff;
+                background-image: url("https://www.transparenttextures.com/patterns/gplay.png");
+                min-width: 100%;
+                min-height: 200px;
+                display: inline-block;
+
+                h3 {
+                    font-size: 70px;
+                    text-align: center;
+                    color: $black;
+                    margin:1rem 0 0 0;
+
+                }
+
+                p {
+                    margin: 0;
+                    text-align: center;
+                    font-size: 50px;
+                    color: lighten($black, 40%);
+                }
+            }
+        }
+    }
+}
