@@ -11,6 +11,9 @@ var ValidateSchema = new Schema({
         required: true,
         default: 0,
     },
+    raison: {
+        type: String,
+    },
 }, { versionKey: false });
 ValidateSchema.plugin(timestamps);
 module.exports = mongoose.model('Treatment', ValidateSchema);

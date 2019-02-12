@@ -7,7 +7,9 @@ class Dashboard extends Component {
         this.state = {
             Order: {},
             alert: 0,
+            raison: null,
         };
+        this.handleRaison = this.handleRaison.bind(this);
         this.commandValidate = this.commandValidate.bind(this);
         this.commandCancelled = this.commandCancelled.bind(this);
     }
@@ -49,22 +51,43 @@ class Dashboard extends Component {
     }
 
     commandCancelled(id) {
-        axios.post(`http://localhost:8000/treat/1`, {
-            Analyse: 1,
-            id: id
-        }).then(data => {
-            if (data.status === 200) {
-                this.setState({alert: 3});
-                console.log(data);
-                this.props.history.push('/dashboard');
-            } else if (data.status === 400) {
-                this.setState({alert: 2});
-            }
-        }).catch((err) => {
-            console.log(err);
-        });
+        if (this.state.raison != null) {
+            axios.post(`http://localhost:8000/treat/1`, {
+                Analyse: 1,
+                raison: this.state.raison,
+                id: id
+            }).then(data => {
+                if (data.status === 200) {
+                    this.setState({alert: 3});
+                    console.log(data);
+                    this.props.history.push('/dashboard');
+                } else if (data.status === 400) {
+                    this.setState({alert: 2});
+                }
+            }).catch((err) => {
+                console.log(err);
+            });
+        } else {
+            axios.post(`http://localhost:8000/treat/1`, {
+                Analyse: 1,
+                id: id
+            }).then(data => {
+                if (data.status === 200) {
+                    this.setState({alert: 3});
+                    console.log(data);
+                    this.props.history.push('/dashboard');
+                } else if (data.status === 400) {
+                    this.setState({alert: 2});
+                }
+            }).catch((err) => {
+                console.log(err);
+            });
+        }
     }
 
+    handleRaison(event) {
+        this.setState({raison: event.target.value});
+    }
 
     render() {
         const command = this.state.Order;
@@ -75,17 +98,17 @@ class Dashboard extends Component {
                         <div className="container" style={{textAlign: 'center'}}>
                             <h2>Traitement</h2>
 
-                            {this.state.alert == 1 ?
+                            {this.state.alert === 1 ?
                                 <div id="succes-alert" className="alert alert-success" role="alert">
                                     La commande a était validé, un mail as était envoyé avec succès.
                                 </div>
                                 : null}
-                            {this.state.alert == 2 ?
+                            {this.state.alert === 2 ?
                                 <div id="error-alert" className="alert alert-danger" role="alert">
                                     Une Erreur est survenue.
                                 </div>
                                 : null}
-                            {this.state.alert == 3 ?
+                            {this.state.alert === 3 ?
                                 <div id="succes-alert" className="alert alert-success" role="alert">
                                     La commande a était réfusé, un mail as était envoyé avec succès.
                                 </div>
@@ -130,7 +153,7 @@ class Dashboard extends Component {
 
                                     <hr/>
                                     <hr/>
-                                    <p><strong>Date de  préférence de livraison : </strong>{command.date}</p>
+                                    <p><strong>Date de préférence de livraison : </strong>{command.date}</p>
                                     <p><strong>De préference à :</strong> {command.horaire} heures</p>
 
                                     <div className="form-group" style={{padding: 10, margin: 10}}>
@@ -146,17 +169,23 @@ class Dashboard extends Component {
                                         >Refuser
                                         </button>
                                     </div>
-
+                                    <div className="form-group">
+                                        <label htmlFor="refus">Raison du refus ( la raison peut être vide ) :</label>
+                                    </div>
+                                    <div className="form-group">
+                                        <textarea style={{width: '60%'}}
+                                                  value={this.state.raison}
+                                                  onChange={this.handleRaison}
+                                        ></textarea>
+                                    </div>
                                 </div>
                                 <div className="card-footer text-muted">
                                     <strong>Commande crée le :</strong> {command.createdAt}
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </React.Fragment>
         );
     }
