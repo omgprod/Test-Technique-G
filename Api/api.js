@@ -490,7 +490,6 @@ a {
 /**** TREAT COMMAND VALIDE ****/
 app.post('/treat/0', (req, res) => {
     Commands.findById(req.body.id, function (err, command) {
-        console.log(command)
         if (command.length != 0) {
             var treatment = new Validate({
                 _treatment: command._id,

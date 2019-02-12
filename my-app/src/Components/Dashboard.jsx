@@ -49,11 +49,11 @@ class Dashboard extends Component {
                                     <th scope="col">Id</th>
                                     <th scope="col">Prénom</th>
                                     <th scope="col">Nom</th>
-                                    <th scope="col">Email</th>
+                                    <th scope="col">E-mail</th>
                                     <th scope="col">Adresse</th>
-                                    <th scope="col">Code Postal</th>
+                                    <th scope="col">Code-Postal</th>
                                     <th scope="col">Pays</th>
-                                    <th scope="col">Telephone</th>
+                                    <th scope="col">Téléphone</th>
                                     <th scope="col">Date de livraison</th>
                                     <th scope="col">Horaire de livraison</th>
                                     <th scope="col">Situation</th>

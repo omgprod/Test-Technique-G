@@ -127,7 +127,7 @@ class Form extends Component {
 
                             {this.state.alert == 1 ?
                                 <div id="succes-alert" className="alert alert-success" role="alert">
-                                    Votre bon de commande vas bientot être pris en compte par nos service.
+                                    Votre bon de commande vas bientôt être pris en compte par nos service.
                                 </div>
                             :null}
                             {this.state.alert == 2 ?
@@ -167,14 +167,14 @@ class Form extends Component {
 
                                     <div className="form-row">
                                         <div className="col">
-                                            <label htmlFor="tel"><strong>Télephone</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="tel"><strong>Téléphone</strong><span style={{color :'red'}}>*</span> :</label>
                                             <input id="tel" name="tel" type="text" placeholder="+33 .."
                                                    onChange={this.handleChangeTel}
                                                    value={this.state.telephone} required
                                             />
                                         </div>
                                         <div className="col">
-                                            <label htmlFor="email"><strong>Email</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="email"><strong>E-mail</strong><span style={{color :'red'}}>*</span> :</label>
                                             <input id="email" name="email" type="text"
                                                    onChange={this.handleChangeEmail}
                                                    value={this.state.email} required
@@ -194,7 +194,7 @@ class Form extends Component {
 
                                     <div className="form-row">
                                         <div className="col">
-                                            <label htmlFor="postal"><strong>Code Postal</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="postal"><strong>Code-Postal</strong><span style={{color :'red'}}>*</span> :</label>
                                             <input id="postal" name="postal" type="number"
                                                    onChange={this.handleChangeCP}
                                                    value={this.state.code} required
@@ -221,7 +221,7 @@ class Form extends Component {
                                             />
                                         </div>
                                         <div className="col">
-                                            <label htmlFor="horaire"><strong>Horaire de livraison souhaité</strong>:</label>
+                                            <label htmlFor="horaire"><strong>Horaire de livraison souhaitée</strong>:</label>
                                             <input id="heure" name="heure" type="number" placeholder="18 heures"
                                                    onChange={this.handleChangeHoraire}
                                                    value={this.state.horaire}

@@ -143,7 +143,7 @@ class Dashboard extends Component {
                                     <p><strong>Adresse de livraison: </strong><br/> {command.adresse}</p>
                                     <div className="form-row">
                                         <div className="col">
-                                            <p><strong>Code Postal: </strong>{command.postal}</p>
+                                            <p><strong>Code-Postal: </strong>{command.postal}</p>
                                         </div>
                                         <div className="col">
                                             <p><strong>Pays: </strong>{command.pays}</p>
