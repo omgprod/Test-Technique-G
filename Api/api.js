@@ -400,15 +400,15 @@ a {
                         <td class="padded">
                           <h1>Chère  ${command.name} , ${command.prenom} </h1>
                           <p>Gustave vous remercie d'utiliser ses <strong>services</strong>.</p>
-                          <p>pour la raison : ${req.body.raison}</p>
                           <p>Votre Commande N° <b>${command._id}</b> a malheureusement était réfusé par nos service.</p>
-                          <p>Veuillez ré-itérer votre commande avec des horaires plus flexibles, ou un adresse valide</p>
-                          <p>L équipe feras son maximum pour convenir a vos besoins </p>
+                          <p>pour la raison : ${req.body.raison}</p>
+                          <p>Veuillez ré-itérer votre commande avec des horaires plus flexibles, ou une adresse valide</p>
+                          <p>L'équipe fera son maximum pour convenir à vos besoins </p>
                           <p style="text-align:center;"><a href="http://www.localhost:3000" class="btn">Refaire une commande</a></p>
                           <p style="text-align:center;">
                             <a href="https://www.mercigustave.co/" class="strong">Gustave</a>
                           </p>
-                          <p class="caption">Nous sommes désolés pour la gène occasioné</p>
+                          <p class="caption">Nous sommes désolés pour la gène occasionée</p>
                         </td>
                     </tr>
                     </tbody>
@@ -765,9 +765,9 @@ a {
                           <h1>Chère  ${command.name} , ${command.prenom} </h1>
                           <p>Gustave vous remercie d'utiliser ses <strong> services</strong>.</p>
                           <p>Nous avons le plaisir de vous informer que</p>
-                          <p>Votre Commande N° <b>${command._id}</b> a était prise en compte par nos service.</p>
-                          <p>Nos serives font leur maximum pour vous livrer dans les délais indiqués ( ${command.date} )</p>
-                          <p>L équipe feras son maximum pour convenir a vos besoins, ne pas hesiter à nous contacter pour toutes questions </p>
+                          <p>Votre Commande N° <b>${command._id}</b> a été prise en compte par nos services.</p>
+                          <p>Nos services font leur maximum pour vous livrer dans les délais indiqués ( ${command.date} )</p>
+                          <p>L'équipe fera son maximum pour convenir à vos besoins, veuillez ne pas hesiter à nous contacter pour toutes autres questions </p>
                           <p style="text-align:center;"><a href="http://www.localhost:3000" class="btn">Voir son compte</a></p>
                           <p style="text-align:center;">
                             <a href="https://www.mercigustave.co/" class="strong">Gustave</a>

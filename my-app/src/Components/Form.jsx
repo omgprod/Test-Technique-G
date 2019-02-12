@@ -15,6 +15,9 @@ class Form extends Component {
             code: 0,
             pays: "",
             alert: 0,
+            formErrors: {email: ''},
+            emailValid: false,
+            formValid: false
         };
         this.handleChangePrenom = this.handleChangePrenom.bind(this);
         this.handleChangeName = this.handleChangeName.bind(this);
@@ -27,6 +30,7 @@ class Form extends Component {
         this.handleChangePays = this.handleChangePays.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+
     componentDidMount() {
         this.setState({alert: 0});
     }
@@ -85,7 +89,18 @@ class Form extends Component {
         });
     }
 
-    handleSubmit(event) {
+
+    EmailTester(){
+        var email = this.state.email;
+        var test = email.test(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+        if (test === true){
+            this.handleSubmit();
+        } else {
+            alert("vérifier l'e-mail entré")
+        }
+    }
+
+    handleSubmit(event){
         var command = {
             prenom: this.state.prenom,
             name: this.state.name,
@@ -102,12 +117,12 @@ class Form extends Component {
         ).then(data => {
             if (data.status === 200) {
                 this.setState({alert: 1});
-                setTimeout(function() {
+                setTimeout(function () {
                     window.location.reload();
                 }, 3000);
             } else {
                 this.setState({alert: 2});
-                setTimeout(function() {
+                setTimeout(function () {
                     alert('an error occured');
                 }, 3000);
             }
@@ -117,24 +132,25 @@ class Form extends Component {
         event.preventDefault();
     }
 
+
     render() {
         return (
             <React.Fragment>
                 <div className="account-first-section">
                     <form className="account-info" onSubmit={this.handleSubmit}>
-                        <div className="container"  style={{textAlign:'center'}}>
+                        <div className="container" style={{textAlign: 'center'}}>
                             <h2>Informations personnelles</h2>
 
                             {this.state.alert == 1 ?
                                 <div id="succes-alert" className="alert alert-success" role="alert">
                                     Votre bon de commande vas bientôt être pris en compte par nos service.
                                 </div>
-                            :null}
+                                : null}
                             {this.state.alert == 2 ?
                                 <div id="error-alert" className="alert alert-danger" role="alert">
                                     Une Erreur est survenue, vérifier vos champs saisie.
                                 </div>
-                            :null}
+                                : null}
 
                             <div className="card text-center">
                                 <div className="card-header">
@@ -145,7 +161,8 @@ class Form extends Component {
 
                                     <div className="form-row">
                                         <div className="col">
-                                            <label htmlFor="firstname"><strong>Prenom</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="firstname"><strong>Prenom</strong><span
+                                                style={{color: 'red'}}>*</span> :</label>
                                             <input id="firstname" name="firstname" type="text"
                                                    onChange={this.handleChangePrenom}
                                                    value={this.state.prenom} required
@@ -154,7 +171,8 @@ class Form extends Component {
                                             />
                                         </div>
                                         <div className="col">
-                                            <label htmlFor="name"><strong>Nom</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="name"><strong>Nom</strong><span
+                                                style={{color: 'red'}}>*</span> :</label>
                                             <input id="name" name="name" type="text"
                                                    onChange={this.handleChangeName}
                                                    value={this.state.value} required
@@ -167,14 +185,16 @@ class Form extends Component {
 
                                     <div className="form-row">
                                         <div className="col">
-                                            <label htmlFor="tel"><strong>Téléphone</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="tel"><strong>Téléphone</strong><span
+                                                style={{color: 'red'}}>*</span> :</label>
                                             <input id="tel" name="tel" type="text" placeholder="+33 .."
                                                    onChange={this.handleChangeTel}
                                                    value={this.state.telephone} required
                                             />
                                         </div>
                                         <div className="col">
-                                            <label htmlFor="email"><strong>E-mail</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="email"><strong>E-mail</strong><span
+                                                style={{color: 'red'}}>*</span> :</label>
                                             <input id="email" name="email" type="text"
                                                    onChange={this.handleChangeEmail}
                                                    value={this.state.email} required
@@ -185,7 +205,8 @@ class Form extends Component {
                                     <hr/>
 
                                     <div className="form-group">
-                                        <label htmlFor="adresse"><strong>Adresse</strong><span style={{color :'red'}}>*</span> :</label>
+                                        <label htmlFor="adresse"><strong>Adresse</strong><span
+                                            style={{color: 'red'}}>*</span> :</label>
                                         <input id="adresse" name="adresse" type="text"
                                                onChange={this.handleChangeAdresse}
                                                value={this.state.adresse} required
@@ -194,16 +215,18 @@ class Form extends Component {
 
                                     <div className="form-row">
                                         <div className="col">
-                                            <label htmlFor="postal"><strong>Code-Postal</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="postal"><strong>Code-Postal</strong><span
+                                                style={{color: 'red'}}>*</span> :</label>
                                             <input id="postal" name="postal" type="number"
                                                    onChange={this.handleChangeCP}
                                                    value={this.state.code} required
                                             />
                                         </div>
                                         <div className="col">
-                                            <label htmlFor="pays"><strong>Pays</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="pays"><strong>Pays</strong><span
+                                                style={{color: 'red'}}>*</span> :</label>
                                             <input id="pays" name="pays" type="text"
-                                                onChange={this.handleChangePays}
+                                                   onChange={this.handleChangePays}
                                                    placeholder="France"
                                                    value={this.state.pays} required
                                             />
@@ -214,14 +237,16 @@ class Form extends Component {
 
                                     <div className="form-row">
                                         <div className="col">
-                                            <label htmlFor="date"><strong>Date de livraison</strong><span style={{color :'red'}}>*</span> :</label>
+                                            <label htmlFor="date"><strong>Date de livraison</strong><span
+                                                style={{color: 'red'}}>*</span> :</label>
                                             <input id="date" name="date" type="date" placeholder="1997-02-22"
                                                    onChange={this.handleChangeDate}
                                                    value={this.state.date} required
                                             />
                                         </div>
                                         <div className="col">
-                                            <label htmlFor="horaire"><strong>Horaire de livraison souhaitée</strong>:</label>
+                                            <label htmlFor="horaire"><strong>Horaire de livraison
+                                                souhaitée</strong>:</label>
                                             <input id="heure" name="heure" type="number" placeholder="18 heures"
                                                    onChange={this.handleChangeHoraire}
                                                    value={this.state.horaire}
@@ -236,10 +261,15 @@ class Form extends Component {
 
                                     </div>
 
-                                    <button className="btn btn-primary" type="submit">Envoyer</button>
+                                    <button
+                                        className="btn btn-primary"
+                                        type="submit"
+                                        >Envoyer
+                                    </button>
+
                                 </div>
                                 <div className="card-footer text-muted">
-                                    <span>Champs obligatoires marqués par <span style={{color :'red'}}>*</span></span>
+                                    <span>Champs obligatoires marqués par <span style={{color: 'red'}}>*</span></span>
                                 </div>
 
                             </div>
