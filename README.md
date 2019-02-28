@@ -10,6 +10,9 @@ Dashboard + Formulaire [React - NodeJS]
 # - MongoDB : 
 - Nom base de données : Technique
 
+# Pré-requis :
+- Npm (NodeJS) & Yarn 
+- MongoDB lancé en local avec la Database : Technique
 
 # Installation Api : 
 - cd /Api
@@ -20,5 +23,3 @@ Dashboard + Formulaire [React - NodeJS]
 - cd /my-app 
 - npm install && yarn install
 - npm start
-
-
